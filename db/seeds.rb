@@ -159,4 +159,10 @@ genres = Hash[[
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
+10.times do
+  Artist.create(name: Faker::Name.name)
+end
 
+20.times do
+  Song.create(title: Faker::Mountain.name, artist_id: Artist.ids.sample, genre_id: Genre.ids.sample)
+end
